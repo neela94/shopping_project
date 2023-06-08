@@ -1,0 +1,23 @@
+<div class="seller-auth">
+  <div class="sign-up">
+    <h1>Seller-Sign-Up</h1>
+    <form [formGroup]="sellerLoginForm" class="common-form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Mail"
+        formControlName="email"
+        required
+      />
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Enter Password"
+        formControlName="password"
+        required
+      />
+      <button class="form-button" (click)="SignUp()">Login</button>
+      <a routerLink="/Auth/register">Dont have Account RegisterHere</a>
+    </form>
+  </div>
+</div>

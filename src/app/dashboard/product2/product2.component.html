@@ -1,0 +1,53 @@
+<p class="deletMsg">{{ productMessage }}</p>
+<div class="container" class="row">
+  <div
+    class="col-sm-4 col-md-6"
+    class="text-left mb-5"
+    style="margin-left: 700px; margin-top: 30px"
+  >
+    <button routerLink="/Dashboard/curd_addProduct">Add Product</button>
+  </div>
+
+  <table>
+    <caption style="text-align: center">
+      ALL MANAGE PRODUCT
+    </caption>
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>ProductName</th>
+        <th>productPrice</th>
+        <th>productNameCategory</th>
+        <th>productImage</th>
+        <th>productDescription</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pData of ProductData">
+        <td>{{ pData.id }}</td>
+        <td>{{ pData.productName }}</td>
+        <td>{{ pData.price }}</td>
+
+        <td>{{ pData.productNameCategory }}</td>
+
+        <td>
+          <img src="{{ pData.productImage }}" alt="" />
+        </td>
+        <td>{{ pData.productDescription }}</td>
+        <td>
+          <button type="button" class="btn btn-link">
+            <i class="fa-solid fa-trash" (click)="deletData(pData.id)"></i>
+          </button>
+          <button type="button" class="btn btn-link">
+            <i
+              class="fa-solid fa-pen-to-square"
+              routerLink="/Dashboard/update_products/{{ pData.id }}"
+            ></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

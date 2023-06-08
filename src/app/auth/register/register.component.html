@@ -1,0 +1,51 @@
+<div class="seller-auth">
+  <div class="sign-up">
+    <h1>Seller-Sign-Up</h1>
+    <form [formGroup]="sellerRegistrationForm" class="common-form">
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Name"
+        formControlName="name"
+        required
+      />
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Last Name Name"
+        formControlName="lname"
+        required
+      />
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter city Name Name"
+        formControlName="city"
+        required
+      />
+      <input
+        type="number"
+        class="form-input"
+        placeholder="Enter Mobile Name Name"
+        formControlName="mobile"
+        required
+      />
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Enter Password"
+        formControlName="password"
+        required
+      />
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Mail"
+        formControlName="email"
+        required
+      />
+      <button class="form-button" (click)="SignUp()">SignUp</button>
+      <a routerLink="/Auth/login">Already Have Account ? Click to Login</a>
+    </form>
+  </div>
+</div>

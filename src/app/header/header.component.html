@@ -1,0 +1,28 @@
+<nav class="nav">
+  <h1>E-COMM</h1>
+  <div class="nav-search">
+    <input
+      #searchInput
+      type="text"
+      (keyup)="searchProduct($event)"
+      placeholder="search for product"
+      (blur)="hideSearch()"
+    />
+    <button (click)="submitSearch(searchInput.value)">Search</button>
+    <ul class="suggested-result" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a>{{ item.productName }}</a>
+      </li>
+    </ul>
+  </div>
+  <ul>
+    <li><a routerLink="/Front-End/Home">Home</a></li>
+    <li><a routerLink="/Front-End/About">About</a></li>
+    <li><a routerLink="/Front-End/Blog">Contact</a></li>
+    <li><a routerLink="/Front-End/Contact">Contact</a></li>
+    <li><a routerLink="/Auth/login">Login</a></li>
+    <li>
+      <a href="#">Cart{{ cartItem }}</a>
+    </li>
+  </ul>
+</nav>

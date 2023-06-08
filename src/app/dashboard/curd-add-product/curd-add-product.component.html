@@ -1,0 +1,65 @@
+<div class="add-product">
+  <form [formGroup]="addProductForm" class="common-form">
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Name"
+      formControlName="productName"
+      required
+    />
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product catgeory"
+      formControlName="productNameCategory"
+      required
+    />
+
+    <input
+      type="number"
+      class="form-input"
+      placeholder="Enter Product price"
+      formControlName="price"
+      required
+    />
+    <div class="form-group">
+      <img
+        [src]="
+          blogImageSrc != ''
+            ? blogImageSrc
+            : ' data:image/jpeg;base64,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'
+        "
+        alt=""
+        style="height: 60px; width: 70px"
+      />
+      <button type="button" class="btn btn-link">
+        <span
+          class="bi bi-pencil"
+          (click)="FileUpload.click()"
+          style="height: 50px"
+        >
+          Edit Image
+        </span>
+      </button>
+
+      <input
+        type="file"
+        class="form-control"
+        placeholder="product image"
+        #FileUpload
+        (change)="onfileChange($event)"
+      />
+    </div>
+
+    <textarea
+      type="number"
+      class="form-input"
+      placeholder="Enter Product Description"
+      formControlName="productDescription"
+      required
+    ></textarea>
+    <button type="submit" class="btn btn-primary" (click)="SaveNewProduct()">
+      Submit
+    </button>
+  </form>
+</div>
